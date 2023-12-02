@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/recipesListFragment">
+
+    <fragment
+        android:id="@+id/recipesListFragment"
+        android:name="com.example.myapplication.RecipesListFragment"
+        android:label="Список рецептів"
+        tools:layout="@layout/fragment_recipes_list">
+        <action
+            android:id="@+id/action_recipesListFragment_to_recipesDetailFragment"
+            app:destination="@id/recipesDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recipesDetailFragment"
+        android:name="com.example.myapplication.RecipesDetailFragment"
+        android:label="Рецепт"
+        tools:layout="@layout/fragment_recipes_detail">
+        <argument
+            android:name="recipes"
+            app:argType="com.example.myapplication.Recipes" />
+    </fragment>
+
+</navigation>
+
